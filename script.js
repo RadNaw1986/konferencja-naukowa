@@ -1,5 +1,4 @@
 // Skrypt do obsługi formularza zgłoszeniowego
-
 const form = document.querySelector('#registration-form');
 
 form.addEventListener('submit', function(event) {
@@ -24,7 +23,7 @@ form.addEventListener('submit', function(event) {
     };
     
     // Wysłanie danych za pomocą Fetch API
-    fetch('https://example.com/api/submit-registration', {
+    fetch('https://radnaw.pl/zapisz_zgloszenie.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
