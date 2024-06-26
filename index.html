@@ -1,18 +1,16 @@
 <!--Radsoław Nawrot - Rad Naw Software Developer-->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konferencja naukowa</title>
-    <meta name="author" content="Radosław Nawrot - 150064">
-
+    <title>Konferencja naukowa – czy zawody UI/UX to zawody przyszłości?</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Konferencja naukowa</h1>
+        <h1>Konferencja naukowa – czy zawody UI/UX to zawody przyszłości?</h1>
     </header>
     
     <section id="mission">
@@ -20,10 +18,76 @@
         <p>Tutaj umieść opis misji konferencji.</p>
     </section>
     
-    <!-- Dodaj kolejne sekcje w zależności od wymagań -->
+    <section id="participants">
+        <h2>Uczestnicy</h2>
+        <p>Tutaj umieść informacje o uczestnikach.</p>
+    </section>
+    
+    <section id="patronage">
+        <h2>Patronaty</h2>
+        <p>Tutaj umieść informacje o patronatach konferencji.</p>
+    </section>
+    
+    <section id="committee">
+        <h2>Komitet organizacyjny</h2>
+        <p>Tutaj umieść informacje o komitecie organizacyjnym.</p>
+    </section>
+    
+    <section id="agenda">
+        <h2>Agenda</h2>
+        <p>Tutaj umieść szczegółową agendę konferencji na dwa dni.</p>
+    </section>
+    
+    <section id="speakers">
+        <h2>Prezentacja głównych speakerów</h2>
+        <p>Tutaj umieść informacje o głównych prelegentach konferencji.</p>
+    </section>
+    
+    <section id="info">
+        <h2>Informacje użytkowe</h2>
+        <p>Tutaj umieść praktyczne informacje, takie jak noclegi, dojazd itp.</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <p>Tutaj umieść dane kontaktowe organizatorów konferencji.</p>
+    </section>
+    
+    <section id="registration">
+        <h2>Formularz zgłoszeniowy</h2>
+        <form id="registration-form">
+            <div>
+                <label for="name">Imię i nazwisko:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="affiliation">Afiliacja:</label>
+                <input type="text" id="affiliation" name="affiliation">
+            </div>
+            <div>
+                <label for="academic-title">Tytuł naukowy:</label>
+                <input type="text" id="academic-title" name="academic-title">
+            </div>
+            <div>
+                <label for="abstract">Abstrakt (do 200 znaków):</label>
+                <textarea id="abstract" name="abstract" maxlength="200"></textarea>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="phone">Nr telefonu:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <button type="submit">Wyślij zgłoszenie</button>
+        </form>
+    </section>
     
     <footer>
         <p>&copy; 2024 Konferencja naukowa</p>
     </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
