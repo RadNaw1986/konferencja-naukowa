@@ -1,4 +1,4 @@
-<!--Radosław Nawrot - Rad Naw Software Developer-->
+<!-- Radosław Nawrot - Rad Naw Software Developer -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="helix-assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="helix-assets/css/template.css">
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
     <header>
@@ -32,49 +31,49 @@
     
     <section id="mission">
         <h2>Mission</h2>
-        <p>Here you can put the description of the conference mission.</p>
+        <p>The mission of the conference is to analyze and discuss the future of professions related to User Interface (UI) and User Experience (UX) design, with particular emphasis on their role in the digital future.</p>
     </section>
     
     <section id="participants">
         <h2>Participants</h2>
-        <p>Here you can put information about the participants.</p>
+        <p>The conference is aimed at all those interested in UX/UI, including professionals, researchers, students, and technology enthusiasts.</p>
     </section>
     
     <section id="patronage">
         <h2>Patronage</h2>
-        <p>Here you can put information about the conference patronage.</p>
+        <p>The conference has received endorsements from leading academic and industry institutions supporting the development of knowledge in UX/UI.</p>
     </section>
     
     <section id="committee">
         <h2>Organizing Committee</h2>
-        <p>Here you can put information about the organizing committee.</p>
+        <p>Our organizers and experts from various technology and UX/UI fields who jointly organize the event.</p>
     </section>
     
     <section id="agenda">
         <h2>Agenda</h2>
-        <p>Here you can put the detailed agenda of the conference for two days.</p>
+        <p>Detailed agenda covering two days of the conference, featuring presentations, workshops, and panel discussions. Details will be available soon.</p>
     </section>
     
     <section id="speakers">
         <h2>Keynote Speakers</h2>
-        <p>Here you can put information about the keynote speakers.</p>
+        <p>Keynote speakers are world-class experts from the UX/UI industry who will share their knowledge and experience at our conference.</p>
     </section>
     
     <section id="info">
         <h2>Practical Information</h2>
-        <p>Here you can put practical information such as accommodations, transportation, etc.</p>
+        <p>Practical information such as conference venue, accommodation options, transportation, and additional attractions for participants.</p>
     </section>
     
     <section id="contact">
         <h2>Contact</h2>
-        <p>Here you can put the contact details of the conference organizers.</p>
+        <p>If you have any questions or need additional information, please contact us at: <a href="mailto:rnawrot704@gmailcom" target="_blank">click here</a></p>
     </section>
     
     <section id="registration">
         <h2>Registration Form</h2>
         <form id="registration-form" action="https://radnaw.pl/zapisz_zgloszenie.php" method="POST">
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://radnaw.pl/podziekowanie">
+            <input type="hidden" name="_next" value="https://radnaw.pl/thank-you">
             <div>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -104,26 +103,26 @@
     </section>
     
     <footer>
-        <p>&copy; 2024 Scientific Conference</p>
-        <a href="index.html">Polski</a> <!-- Przycisk powrotu do wersji polskiej -->
+        <p>&copy; 2024 Scientific Conference – UI/UX</p>
+        <a href="index.html">Polski</a> <!-- Return to Polish version -->
     </footer>
 
-        <!-- Ładowanie plików JavaScript -->
-        <script src="helix-assets/js/jquery.min.js"></script>
-        <script src="helix-assets/js/bootstrap.bundle.min.js"></script>
-        <script>
-            // Skrypt do przełączania języków
-            document.addEventListener('DOMContentLoaded', function() {
-                const switchToEnglishLink = document.getElementById('switch-to-english');
-                
-                switchToEnglishLink.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    // Zamień język na angielski
-                    document.documentElement.lang = 'en';
-                    window.location.href = 'index-en.html'; // Przeładuj stronę
-                });
+    <!-- Ładowanie plików JavaScript -->
+    <script src="helix-assets/js/jquery.min.js"></script>
+    <script src="helix-assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Skrypt do przełączania języków
+        document.addEventListener('DOMContentLoaded', function() {
+            const switchToEnglishLink = document.getElementById('switch-to-english');
+            
+            switchToEnglishLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                // Zamień język na angielski
+                document.documentElement.lang = 'en';
+                window.location.href = 'index-en.html'; // Przeładuj stronę
             });
-        </script>
+        });
+    </script>
 
 </body>
 </html>
