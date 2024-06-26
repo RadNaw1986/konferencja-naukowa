@@ -22,8 +22,9 @@ form.addEventListener('submit', function(event) {
         email: email,
         phone: phone
     };
-git add index.html script.js style.css
-
+    
+    // Wysłanie danych za pomocą Fetch API
+    fetch('https://example.com/api/submit-registration', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
