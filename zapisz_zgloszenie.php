@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST['phone'] ?? '';
 
     // Adres email, na który będą wysyłane zgłoszenia
-    $to = 'twoja@skrzynka.pocztowa';
+    $to = 'rnawrot704@gmail.com';
 
     // Temat wiadomości email
     $subject = 'Nowe zgłoszenie na konferencję';
@@ -26,7 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message .= "Nr telefonu: $phone\n";
 
     // Nagłówki wiadomości email
-    $headers = "From: $email";
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
     // Wysłanie wiadomości email
     if (mail($to, $subject, $message, $headers)) {
