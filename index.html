@@ -21,7 +21,7 @@
                 <li><a href="#info">Informacje użytkowe</a></li>
                 <li><a href="#contact">Kontakt</a></li>
                 <li><a href="#registration">Formularz zgłoszeniowy</a></li>
-                <li><a href="index.html">English</a></li>
+                <li><a href="#" id="switch-to-english">English</a></li>
             </ul>
         </nav>
         <h1>Konferencja naukowa – czy zawody UI/UX to zawody przyszłości?</h1>
@@ -103,5 +103,19 @@
     <footer>
         <p>&copy; 2024 Konferencja naukowa</p>
     </footer>
+
+    <script>
+        // Skrypt do przełączania języków
+        document.addEventListener('DOMContentLoaded', function() {
+            const switchToEnglishLink = document.getElementById('switch-to-english');
+            
+            switchToEnglishLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                // Zamień język na angielski
+                document.documentElement.lang = 'en';
+                window.location.href = 'index-en.html'; // Przeładuj stronę
+            });
+        });
+    </script>
 </body>
 </html>
