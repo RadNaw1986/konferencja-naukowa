@@ -1,16 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
 }
 
 header {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #f8f9fa;
+    padding: 20px;
     text-align: center;
-    padding: 20px 0;
 }
 
 nav ul {
@@ -25,15 +22,12 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #007bff;
 }
 
 section {
-    background-color: #fff;
     padding: 20px;
     margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 form div {
@@ -46,22 +40,17 @@ label {
 }
 
 input, textarea {
-    width: calc(100% - 16px); /* 16px to kompensacja za padding */
-    padding: 10px;
+    width: 100%;
+    padding: 8px;
     box-sizing: border-box;
-    margin: 8px 0; /* Dodatkowy margin na górze i dole */
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
 button {
-    padding: 12px 24px; /* Trochę większe wymiary przycisku */
+    padding: 10px 15px;
     background-color: #007bff;
-    color: #fff;
+    color: white;
     border: none;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
 }
 
 button:hover {
@@ -69,8 +58,7 @@ button:hover {
 }
 
 footer {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #f8f9fa;
     text-align: center;
     padding: 10px 0;
     position: fixed;
