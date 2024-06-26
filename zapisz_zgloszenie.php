@@ -14,49 +14,57 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST['phone'] ?? '';
 
     // Adres email, na który będą wysyłane zgłoszenia
-    $to = 'rnawrot704@gmail.com';
+    $toOrganizer = 'rnawrot704@gmail.com';
+    $toParticipant = $email;
 
-    // Temat wiadomości email dla zgłoszenia
-    $subject = 'Nowe zgłoszenie na konferencję';
+    // Temat wiadomości email dla zgłoszenia do organizatora
+    $subjectToOrganizer = 'Nowe zgłoszenie na konferencję';
 
-    // Treść wiadomości email dla zgłoszenia
-    $message = "Nowe zgłoszenie na konferencję:\n\n";
-    $message .= "Imię i nazwisko: $name\n";
-    $message .= "Afiliacja: $affiliation\n";
-    $message .= "Tytuł naukowy: $academicTitle\n";
-    $message .= "Abstrakt: $abstract\n";
-    $message .= "Email: $email\n";
-    $message .= "Nr telefonu: $phone\n";
+    // Treść wiadomości email dla zgłoszenia do organizatora
+    $messageToOrganizer = "Nowe zgłoszenie na konferencję:\n\n";
+    $messageToOrganizer .= "Imię i nazwisko: $name\n";
+    $messageToOrganizer .= "Afiliacja: $affiliation\n";
+    $messageToOrganizer .= "Tytuł naukowy: $academicTitle\n";
+    $messageToOrganizer .= "Abstrakt: $abstract\n";
+    $messageToOrganizer .= "Email: $email\n";
+    $messageToOrganizer .= "Nr telefonu: $phone\n";
 
-    // Nagłówki wiadomości email dla zgłoszenia
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    // Nagłówki wiadomości email dla zgłoszenia do organizatora
+    $headersToOrganizer = "From: $email\r\n";
+    $headersToOrganizer .= "Reply-To: $email\r\n";
+    $headersToOrganizer .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-    // Wysłanie wiadomości email dla zgłoszenia
-    if (mail($to, $subject, $message, $headers)) {
-        // Przygotowanie wiadomości potwierdzającej dla zgłaszającego
-        $confirmSubject = 'Potwierdzenie zgłoszenia na konferencję';
-        $confirmMessage = "Dziękujemy za zgłoszenie na konferencję.\n\n";
-        $confirmMessage .= "Otrzymaliśmy następujące dane:\n\n";
-        $confirmMessage .= "Imię i nazwisko: $name\n";
-        $confirmMessage .= "Afiliacja: $affiliation\n";
-        $confirmMessage .= "Tytuł naukowy: $academicTitle\n";
-        $confirmMessage .= "Abstrakt: $abstract\n";
-        $confirmMessage .= "Email: $email\n";
-        $confirmMessage .= "Nr telefonu: $phone\n";
+    // Wysłanie wiadomości email dla zgłoszenia do organizatora
+    $mailToOrganizer = mail($toOrganizer, $subjectToOrganizer, $messageToOrganizer, $headersToOrganizer);
 
-        // Wysłanie wiadomości potwierdzającej do zgłaszającego
-        if (mail($email, $confirmSubject, $confirmMessage, $headers)) {
-            // Przekierowanie użytkownika po udanym wysłaniu formularza
-            header('Location: https://radnaw.pl/podziekowanie');
-            exit;
-        } else {
-            // Obsługa błędu, jeśli nie udało się wysłać wiadomości potwierdzającej
-            echo 'Wystąpił problem podczas przetwarzania zgłoszenia. Spróbuj ponownie później.';
-        }
+    // Temat wiadomości email dla potwierdzenia zgłoszenia dla uczestnika
+    $subjectToParticipant = 'Potwierdzenie zgłoszenia na konferencję';
+
+    // Treść wiadomości email dla potwierdzenia zgłoszenia dla uczestnika
+    $messageToParticipant = "Dziękujemy za zgłoszenie na konferencję.\n\n";
+    $messageToParticipant .= "Otrzymaliśmy następujące dane:\n\n";
+    $messageToParticipant .= "Imię i nazwisko: $name\n";
+    $messageToParticipant .= "Afiliacja: $affiliation\n";
+    $messageToParticipant .= "Tytuł naukowy: $academicTitle\n";
+    $messageToParticipant .= "Abstrakt: $abstract\n";
+    $messageToParticipant .= "Email: $email\n";
+    $messageToParticipant .= "Nr telefonu: $phone\n";
+
+    // Nagłówki wiadomości email dla potwierdzenia zgłoszenia dla uczestnika
+    $headersToParticipant = "From: $toOrganizer\r\n"; // Możesz użyć swojego adresu jako nadawcy
+    $headersToParticipant .= "Reply-To: $toOrganizer\r\n"; // Możesz użyć swojego adresu jako nadawcy
+    $headersToParticipant .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    // Wysłanie wiadomości email dla potwierdzenia zgłoszenia dla uczestnika
+    $mailToParticipant = mail($toParticipant, $subjectToParticipant, $messageToParticipant, $headersToParticipant);
+
+    // Sprawdzenie czy oba maile zostały wysłane
+    if ($mailToOrganizer && $mailToParticipant) {
+        // Przekierowanie użytkownika po udanym wysłaniu formularza
+        echo '<script>window.open("https://radnaw.pl/podziekowanie", "_blank");</script>';
+        exit;
     } else {
-        // Obsługa błędu, jeśli nie udało się wysłać wiadomości zgłoszenia
+        // Obsługa błędu, jeśli nie udało się wysłać któregoś z maili
         echo 'Wystąpił problem podczas przetwarzania zgłoszenia. Spróbuj ponownie później.';
     }
 } else {
