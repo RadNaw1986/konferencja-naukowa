@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sprawdzenie czy oba maile zostały wysłane
     if ($mailToOrganizer && $mailToParticipant) {
         // Przekierowanie użytkownika po udanym wysłaniu formularza
-        echo '<script>window.open("https://radnaw.pl/podziekowanie", "_blank");</script>';
+        header('Location: https://radnaw.pl/podziekowanie');
         exit;
     } else {
         // Obsługa błędu, jeśli nie udało się wysłać któregoś z maili
